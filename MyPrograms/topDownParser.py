@@ -6,6 +6,11 @@ T -> Ft
 t -> *Ft | epi
 F -> (E) | d
 """
+"""
+sample input
+(d+d)*d
+(((((((d)))))))+(d)+(d*d)
+"""
 parsingTable = {'E':{"d":"Te","(":"Te"},
                 "e":{"+":"+Te",")":"","$":""},
                 "T":{"d":"Ft","(":"Ft"},
