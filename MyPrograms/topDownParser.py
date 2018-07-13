@@ -10,6 +10,7 @@ F -> (E) | d
 sample input
 (d+d)*d
 (((((((d)))))))+(d)+(d*d)
+(d+d+d+d)*(d*d*) # Invalid expression
 """
 parsingTable = {'E':{"d":"Te","(":"Te"},
                 "e":{"+":"+Te",")":"","$":""},
