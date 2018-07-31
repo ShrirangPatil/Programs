@@ -2,7 +2,7 @@
 FindS without inductive bias
 """
 noOfTrainEx = 4#int(input("Enter the no of training examples"))
-noOfAttri = 7
+noOfAttri = 7#int(input("Enter the no of attributes"))
 trainEx = [["Sunny","Warm","Normal","Strong","Warm","Same","Yes"],
            ["Sunny","Warm","High","Strong","Warm","Same","Yes"],
            ["Sunny","Cold","High","Strong","Warm","Same","No"],
