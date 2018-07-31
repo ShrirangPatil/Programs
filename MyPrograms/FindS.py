@@ -1,5 +1,6 @@
 """
 FindS without inductive bias
+
 """
 noOfTrainEx = 4#int(input("Enter the no of training examples"))
 noOfAttri = 7#int(input("Enter the no of attributes"))
@@ -21,4 +22,28 @@ for i in trainEx:
                 hypo[j] = "?"
             print(hypo[0:6])
 print(hypo[0:6])
-
+"""
+sample output
+['Sunny', 0, 0, 0, 0, 0]
+['Sunny', 'Warm', 0, 0, 0, 0]
+['Sunny', 'Warm', 'Normal', 0, 0, 0]
+['Sunny', 'Warm', 'Normal', 'Strong', 0, 0]
+['Sunny', 'Warm', 'Normal', 'Strong', 'Warm', 0]
+['Sunny', 'Warm', 'Normal', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', 'Normal', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', 'Normal', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', 'Normal', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', '?', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', '?', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', '?', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', '?', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', '?', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', '?', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', '?', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', '?', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', '?', 'Strong', 'Warm', 'Same']
+['Sunny', 'Warm', '?', 'Strong', '?', 'Same']
+['Sunny', 'Warm', '?', 'Strong', '?', '?']
+['Sunny', 'Warm', '?', 'Strong', '?', '?']
+['Sunny', 'Warm', '?', 'Strong', '?', '?']
+"""
