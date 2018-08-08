@@ -20,6 +20,7 @@ struct node* addNode(struct node* head,int ele)
         return head;
     }
     newnode->next = head;
+    newnode->prev = NULL;
     head->prev = newnode;
     head = newnode;
     return head;
@@ -45,7 +46,8 @@ struct node* removeNode(struct node *head,int ele)
         rmNode = temp->next;
         //printf("\n%d\n",rmNode->data);
         temp->next = temp->next->next;
-        rmNode->next->prev = temp;
+        if(rmNode->next != NULL)
+            rmNode->next->prev = temp;
         rmNode->prev = NULL;
         rmNode->next = NULL;
     }

@@ -16,8 +16,8 @@ struct node* addNode(struct node* head,int ele)
         head = newnode;
         return head;
     }
-    newnode = (struct node*)malloc(sizeof(struct node));
-    newnode->data = ele;
+    //newnode = (struct node*)malloc(sizeof(struct node));
+    //newnode->data = ele;
     newnode->next = head;
     head = newnode;
     return head;
