@@ -10,14 +10,29 @@ Appending zeros to data : 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0(Provide this
 CRC(cyclic redundancy check) : 0 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1(for above data)
 Data after appending CRC : 1 1 1 1 0 1 1 1 1 0 0 1 1 1 1 1 1 1 1 1 1(The data to be sent)
 
+Sample INPUT 0:(Note make SIZE = 4 and polynomial to {1,1,0,1}(11 in deci))
+Enter the size of message 	4
+Enter the message
+1 0 1 0 0 0 0 0
+OUTPUT 0:
+CRC to be appended	0110
+
+Sample INPUT 1:(On default polynomial and SIZE)
+Enter the size of message 	4
+Enter the message
+1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+OUTPUT 1:
+CRC to be appended	01111001111111111
+
 Note:
 All the values are stored in reverse fasion ie MSB will be at the LAST position and LSB will be at the FIRST position
+Runs only with gcc compiler
 */
 int main()
 {
 	//		     6 5 4 3 2 1 0 9 8 7 6 5 4 3 2 1 0 ; 1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,1
 	int genPoly[SIZE] = {1,0,0,0,0,1,0,0,0,0,0,0,1,0,0,0,1};
-	int n,i,j;
+	int n,i;
 	int rem[SIZE], temp[SIZE];
 	printf("Enter the size of message \t");
 	scanf("%d",&n);
@@ -83,4 +98,10 @@ int main()
 		}
 
 	}
+	
+	printf("\nCRC to be appended\t");
+	printf("0");
+	for(i=SIZE-1;i>0;i--)
+		printf("%d",temp[i]);
 }
+
