@@ -4,28 +4,68 @@ constructed using a keyword.
 KeyWord used is "MONARCHY"
 
 Sample INPUT 0:
+Enter the keyword :MoNaRcHy
 Enter the Plain Text:	"'hi this is shrirang...!'"
 Formated plaintext:	 hithisisshrirang
 Cipher generated:	 BFPDSXSXPBAKMRYQ
 Plain text generated:	 hithisisshrirang
 
 Sample INPUT 1:
+Enter the keyword :monarchy
 Enter the Plain Text:	balloon
 Formated plaintext:	 balxloon
 Cipher generated:	 IBSUPMNA
 Plain text generated:	 balxloon
 
 Sample INPUT 2:
-Enter the Plain Text:	xxx
-Formated plaintext:	 xxxxxx
-Cipher generated:	 ZZZZZZ
-Plain text generated:	 xxxxxx
+Enter the keyword :Shrirang
+Enter the Plain Text:	coding is best
+Formated plaintext:	 codingisbest
+Cipher generated:	 NTCAGBAHNKIO
+Plain text generated:	 codingisbest
 """
 
 
-table = [['M','O','N','A','R'],['C','H','Y','B','D'],['E','F','G','I','K'],
-         ['L','P','Q','S','T'],['U','V','W','X','Z']]
+table = [['','','','',''],['','','','',''],['','','','',''],
+         ['','','','',''],['','','','','']]
+def tableConstruct(keyword):
+    temp = ""
+    global table
+    for i in keyword:
+        if i not in temp:
+            temp += i
+    index = 0
+    flag = False
+    #print(temp)
+    #print(table)
+    for i in table:
+        for j in range(len(i)):
+            if j+index < len(temp):
+                i[j] = temp[j+index].upper()
+            else:
+                flag = True
+                break
+        index += j+1
+        if flag == True:
+            break
+    numi = tempi = table.index(i)
+    numj = j
+    #print(numi,numj)
+    for i in "ABCDEFGHIKLMNOPQRSTUVWXYZ":
+        flag1 = False
+        for j in range(tempi+1):
+            if i in table[j]:
+                flag1 = True
+                break
+        if flag1 == False:
+            if numj == 5:
+                numi += 1
+                numj = 0
+            table[numi][numj] = i
+            numj += 1
+    #print(table)
 
+    
 def formatIt(plainText):
     x = 0
     temp = plainText[0:]
@@ -128,6 +168,8 @@ def decryption(cipherText):
             plainText += table[tworow][twocol]
     return plainText
 if __name__ == "__main__":
+    keyword = input("Enter the keyword :")
+    tableConstruct(keyword)
     plainText = input("Enter the Plain Text:\t")
     for i in ''' ;:,.!-'"_=''':
         plainText = plainText.replace(i,"")
