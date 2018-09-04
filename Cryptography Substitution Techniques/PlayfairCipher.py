@@ -32,8 +32,8 @@ def tableConstruct(keyword):
     temp = ""
     global table
     for i in keyword:
-        if i not in temp:
-            temp += i
+        if i.upper() not in temp:
+            temp += i.upper()
     index = 0
     flag = False
     #print(temp)
